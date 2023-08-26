@@ -1,0 +1,18 @@
+<h1>Choose city</h1>
+
+<form [formGroup]="form">
+  <label for="city">City: </label>
+  <input id="city" type="text" formControlName="city" />
+  &nbsp;
+  <button type="submit" (click)="processForm()" [disabled]="!form.valid">Add</button>
+</form>
+<br />
+<div *ngIf="cityList.length > 0">
+  <h3>List of cities</h3>
+  <table>
+    
+    <tr *ngFor="let city of cityList">
+        <a [routerLink]="['/weather/', city]">{{city}}</a>
+    </tr>
+  </table>
+</div>
