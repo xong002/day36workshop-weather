@@ -1,1 +1,9 @@
-<p>weather-details works!</p>
+<h1>{{wd.name | titlecase}}</h1>
+<button [routerLink]="['/']">Back</button>
+<div style="background-color: black; color:white">
+    <ul>
+        <li>Description: <span>{{wd.description | titlecase}}</span></li>
+        <li>Icon: <img [src]="wd.icon"></li>
+        <li>Temperature: <span>{{wd.temperature | number:'1.0-2'}} &#8451;</span></li>
+    </ul>
+</div>
